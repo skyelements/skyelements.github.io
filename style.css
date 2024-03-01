@@ -1,0 +1,127 @@
+/* Fonts */
+.font-normal {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.font-bold {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Page Contents */
+.button-component-div {
+    position: relative;
+    margin-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.page-div {
+    position: relative;
+    margin-left: 25px;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.page-h2 {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Cards */
+.card-div {
+    position: relative;
+    margin-left: 25px;
+    width: 25%;
+    border-radius: 6px;
+    border: 3px solid black;
+    padding: 25px 25px;
+    background-color: #dadada;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.page-card-div {
+    position: relative;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    border-radius: 6px;
+    padding: 25px 25px;
+    background-color: #dadada;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+}
+
+/* Buttons */
+.black-button {
+    background-color: #000000;
+    border: none;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f0f6fc1a;
+    color: #ffffff;
+    padding: 8px 24px;
+    text-align: center;
+    display: inline-block;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: transparent 0px 0px;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.green-button {
+    background-color: #198754;
+    border: none;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f0f6fc1a;
+    color: #ffffff;
+    padding: 8px 24px;
+    text-align: center;
+    display: inline-block;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: transparent 0px 0px;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.black-button:hover {
+    background-color: #333333;
+    color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.green-button:hover {
+    background-color: #198754;
+    color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Bootstrap - Toast */
+.toast-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure the toast is above other elements */
+}
+
+.me-small {
+    margin-left: 190px;
+}

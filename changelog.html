@@ -6,7 +6,7 @@
         <link rel="icon" type="icon" href="/assets/favicon/favicon.ico">
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="index.js"></script>
-        <title>html by yewshanooi</title>
+        <title>Changelog</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
@@ -17,30 +17,22 @@
 
         <main>
             <div class="page-div">
-                <h2 class="page-h2">Welcome to html</h2>
-                <p class="font-normal">Home of everything web development.</p> 
+                <h2 class="page-h2">Changelog</h2>
+                <p class="font-normal">View all of the latest features and bug fixes.</p> 
             </div>
         </main>
 
-        <div class="button-component-div">
-            <a href="commands.html" class="black-button">Featured page</a>
+        <div class="page-card-div">
+            <p class="font-normal"><b>commands.html:</b> Replaced legacy cards with Bootstrap cards, row, and buttons</p>
+            <p class="font-normal"><b>Navbar:</b> Added global navbar support for all pages</p>
+            <p class="font-normal"><b>Bootstrap:</b> Updated to version 5.3.2</p>
         </div>
 
         <script>
-          $(function(){
-            $("#navbar").load("components/navbar.html"); 
-          });
+            $(function(){
+              $("#navbar").load("components/navbar.html"); 
+            });
         </script>
-
-        <!-- To add navbar use:
-        <div id="navbar"></div>
-
-        <script>
-          $(function(){
-            $("#navbar").load("components/navbar.html"); 
-          });
-        </script>
-        --->
 
     </body>
 </html>
