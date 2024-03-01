@@ -18,10 +18,19 @@
     </div>
 
     <div class="container-fluid">
-        <form class="d-flex ms-auto" role="search">
-          <input class="form-control me-2" type="search" placeholder="Type something..." aria-label="Search">
-          <button onclick="submitButton()" class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-    </div>
+      <form class="d-flex ms-auto" role="search">
+        <div class="d-flex align-items-center me-3">Gemini</div>
+        <input id="APIKeyInput" class="form-control me-3" type="search" placeholder="Enter your API key" aria-label="API key">
+        <div class="me-2">
+          <button onclick="saveAPIKey()" class="btn btn-success" type="submit">Save</button>
+        </div>
+        <div class="me-2">
+          <button onclick="getAPIKey()" class="btn btn-warning" type="submit">View</button>
+        </div>
+        <div>
+          <button onclick="removeAPIKey()" class="btn btn-danger" type="submit">Clear</button>
+        </div>
+      </form>
+  </div>
 
 </nav>

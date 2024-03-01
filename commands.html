@@ -44,7 +44,7 @@
 
             async function fetchGemini() {
                 try {
-                    // [To-Do] Get the GOOGLE_API_KEY from user and save it as a variable
+                    const GOOGLE_API_KEY = localStorage.getItem("GOOGLE_API_KEY");
 
                     const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
                     const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });

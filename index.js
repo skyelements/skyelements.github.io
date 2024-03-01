@@ -13,7 +13,26 @@ async function getCatFact() {
         myToast.show();
 };
 
-// Navbar Search button
-async function submitButton() {
-    alert('You have clicked on the Search button!');
+async function saveAPIKey() {
+    let apiKey = document.getElementById('APIKeyInput').value;
+        localStorage.setItem("GOOGLE_API_KEY", apiKey);
+
+    alert('You have saved your API key!');
+};
+
+async function getAPIKey() {
+    try {
+        const API_KEY = localStorage.getItem("GOOGLE_API_KEY");
+        alert(`Your API key is: ${API_KEY}`);
+    }
+    catch {
+        alert('Error: There was an error getting your API key.')
+    }
+};
+
+async function removeAPIKey() {
+    localStorage.removeItem("GOOGLE_API_KEY");
+        // localStorage.clear();
+
+    alert('You have removed your API key!');
 };
