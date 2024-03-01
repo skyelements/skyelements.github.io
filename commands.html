@@ -44,8 +44,8 @@
 
             async function fetchGemini() {
                 try {
-                    // [To-Do] API Key need to be connected with an actions workflow to retrieve it from GitHub
-                    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+                    // [To-Do] API Key need to be connected with an actions workflow to retrieve it from GitHub.
+                    const genAI = new GoogleGenerativeAI($GOOGLE_API_KEY);
                     const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
                     const prompt = document.getElementById('geminiInput').value;
