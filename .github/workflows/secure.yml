@@ -1,4 +1,4 @@
-name: Secure Workflow
+name: "Secure Workflow"
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Using Secret in Application
       run: echo "Using Secret in Application"
