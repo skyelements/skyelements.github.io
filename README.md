@@ -11,3 +11,6 @@ Preview commands from Sodium, a Discord bot by SkyElements.
 
 ## Changelog
 View all of the latest features and bug fixes.
+
+## API Keys
+Add, view, or remove your secret keys.
