@@ -13,14 +13,14 @@ async function getCatFact() {
         myToast.show();
 };
 
-async function saveAPIKey() {
+async function addAPIKey() {
     let apiKey = document.getElementById('APIKeyInput').value;
         localStorage.setItem("GOOGLE_API_KEY", apiKey);
 
     alert('You have saved your API key!');
 };
 
-async function getAPIKey() {
+async function viewAPIKey() {
     try {
         const API_KEY = localStorage.getItem("GOOGLE_API_KEY");
         alert(`Your API key is: ${API_KEY}`);
@@ -35,4 +35,10 @@ async function removeAPIKey() {
         // localStorage.clear();
 
     alert('You have removed your API key!');
+};
+
+async function removeAllAPIKeys() {
+    localStorage.clear();
+
+    alert('You have removed all existing API keys!');
 };
