@@ -57,24 +57,31 @@
             attachEventListener();
 
 
-            import { GoogleGenerativeAI } from "@google/generative-ai";
+            import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
             async function fetchGemini() {
                 try {
                     const GOOGLE_API_KEY = localStorage.getItem("GOOGLE_API_KEY");
 
+                    const prompt = document.getElementById('geminiInput').value;
+
                     const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
                     const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
-                    const prompt = document.getElementById('geminiInput').value;
-
-                    const result = await model.generateContent(prompt);
-                    const response = await result.response;
-                    const text = response.text();
+                    const result = await model.generateContent({
+                        contents: [{ role: 'USER', parts: [{ text: prompt }] }],
+                        generationConfig: { temperature: 0.5, topP: 0.5, topK: 20 },
+                        safetySettings: [
+                            { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+                            { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+                            { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+                            { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE }
+                        ]
+                    });
 
                     document.getElementById("geminiOutputTitle").innerHTML = "Result";
-                    document.getElementById("geminiOutputDesc").innerHTML = marked.parse(text);
-                        // window.alert(text);
+                    document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
+                        // window.alert();
                 }
                 catch (err) {
                     window.alert(err);
