@@ -167,13 +167,3 @@
 .me-small {
     margin-left: 190px;
 }
-
-/* Bootstrap - Dropdown Menu */
-.dropdown-right:hover>.dropdown-menu {
-    display: block;
-}
-  
-.dropdown-right>.dropdown-toggle:active {
-/*Without this, clicking will make it sticky*/
-    pointer-events: none;
-}
