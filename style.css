@@ -87,6 +87,26 @@
     text-decoration: none;
 }
 
+.yellow-button {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f0f6fc1a;
+    color: #ffffff;
+    padding: 8px 24px;
+    text-align: center;
+    display: inline-block;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: transparent 0px 0px;
+    gap: 8px;
+    text-decoration: none;
+}
+
 .red-button {
     background-color: #dc3545;
     border: none;
@@ -121,6 +141,13 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.yellow-button:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .red-button:hover {
     background-color: #dc3545;
     color: #ffffff;
@@ -139,4 +166,14 @@
 
 .me-small {
     margin-left: 190px;
+}
+
+/* Bootstrap - Dropdown Menu */
+.dropdown-right:hover>.dropdown-menu {
+    display: block;
+}
+  
+.dropdown-right>.dropdown-toggle:active {
+/*Without this, clicking will make it sticky*/
+    pointer-events: none;
 }
