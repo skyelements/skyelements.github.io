@@ -1,4 +1,4 @@
-// Cat Fact command toast
+// Command toast for catfact
 async function getCatFact() {
     const Fact = await fetch('https://catfact.ninja/fact')
         .then(res => res.json());
@@ -15,8 +15,13 @@ async function getCatFact() {
 
 async function addAPIKey() {
     let apiKey = document.getElementById('APIKeyInput').value;
-        localStorage.setItem("GOOGLE_API_KEY", apiKey);
 
+    if (apiKey === '') {
+        alert('Error: Please enter an API key.')
+        return;
+    }
+
+    localStorage.setItem("GOOGLE_API_KEY", apiKey);
     alert('You have saved your API key!');
 };
 
@@ -32,13 +37,10 @@ async function viewAPIKey() {
 
 async function removeAPIKey() {
     localStorage.removeItem("GOOGLE_API_KEY");
-        // localStorage.clear();
-
     alert('You have removed your API key!');
 };
 
 async function removeAllAPIKeys() {
     localStorage.clear();
-
     alert('You have removed all existing API keys!');
 };

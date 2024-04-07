@@ -35,6 +35,10 @@
 }
 
 /* Cards */
+.card {
+    margin-bottom: 20px; /* Adds a spacing between bootstrap cards when display is vertical (such as on Mobile) */
+}
+
 .card-div {
     position: relative;
     margin-left: 25px;

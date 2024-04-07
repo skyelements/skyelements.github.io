@@ -65,23 +65,28 @@
 
                     const prompt = document.getElementById('geminiInput').value;
 
-                    const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-                    const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
+                    if (prompt === '') {
+                        window.alert('Error: You cannot leave the prompt empty.');
+                        card.style.display = 'none';
+                    } 
+                    else {
+                        const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
+                        const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
-                    const result = await model.generateContent({
-                        contents: [{ role: 'USER', parts: [{ text: prompt }] }],
-                        generationConfig: { temperature: 0.5, topP: 0.5, topK: 20 },
-                        safetySettings: [
-                            { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-                            { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-                            { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-                            { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE }
-                        ]
-                    });
+                        const result = await model.generateContent({
+                            contents: [{ role: 'USER', parts: [{ text: prompt }] }],
+                            generationConfig: { temperature: 0.5, topP: 0.5, topK: 20 },
+                            safetySettings: [
+                                { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+                                { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+                                { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+                                { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE }
+                            ]
+                        });
 
-                    document.getElementById("geminiOutputTitle").innerHTML = "Result";
-                    document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
-                        // window.alert();
+                        document.getElementById("geminiOutputTitle").innerHTML = "Result";
+                        document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
+                    }
                 }
                 catch (err) {
                     window.alert(err);
@@ -94,7 +99,7 @@
         <main>
             <div class="page-div">
                 <h2 class="page-h2">Gemini <img src="https://raw.githubusercontent.com/yewshanooi/sodium/main/.github/icons/sparkles.png" width="22" height="23" class="d-inline-block align-items-center"></h2>
-                <p class="font-normal">Chat with an AI bot powered by Gemini.</p>
+                <p class="font-normal">Chat with Gemini, an AI powered chatbot by Google.</p>
             </div>
         </main>
 
