@@ -4,13 +4,13 @@
 <br/>
 
 ## Home
-Sample website for web development
+Home of everything web development.
+
+## Gemini
+Chat with Gemini, an AI powered chatbot by Google.
 
 ## Commands
-Preview commands from Sodium, a Discord bot by SkyElements.
+Preview commands from Sodium, an open source Discord bot by SkyElements.
 
-## Changelog
-View all of the latest features and bug fixes.
-
-## API Keys
+## API keys
 Add, view, or remove your secret keys.
