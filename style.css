@@ -131,6 +131,26 @@
     text-decoration: none;
 }
 
+.blue-button {
+    background-color: #0b57d0;
+    border: none;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f0f6fc1a;
+    color: #ffffff;
+    padding: 8px 24px;
+    text-align: center;
+    display: inline-block;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: transparent 0px 0px;
+    gap: 8px;
+    text-decoration: none;
+}
+
 .black-button:hover {
     background-color: #333333;
     color: #ffffff;
@@ -154,6 +174,13 @@
 
 .red-button:hover {
     background-color: #dc3545;
+    color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.blue-button:hover {
+    background-color: #0b57d0;
     color: #ffffff;
     transition-duration: 0.4s;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
