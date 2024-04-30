@@ -14,3 +14,6 @@ Preview commands from Sodium, an open source Discord bot by SkyElements.
 
 ## API keys
 Add, view, or remove your secret keys.
+
+## Sign in
+An authentication portal for users.

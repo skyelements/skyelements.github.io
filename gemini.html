@@ -90,6 +90,8 @@
                 }
                 catch (err) {
                     window.alert(err);
+
+                    window.location.reload();
                 }
             }
         </script>
@@ -110,7 +112,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="mt-3 mb-3 d-flex gap-3">
-                            <input type="text" placeholder="Enter a prompt here" class="form-control font-paragraph" id="geminiInput" aria-describedby="geminiDisclaimer">
+                            <input type="text" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-body-secondary" id="geminiInput" aria-describedby="geminiDisclaimer">
                             <button id="geminiInputButton" class="green-button"><img src="/assets/icon/icons8-send-48.png" width="20" height="20" class="d-inline-block align-text-top"></button>
                         </div>
                         <p id="geminiDisclaimer" class="mb-2 form-text font-subscript">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
