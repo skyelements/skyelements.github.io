@@ -13,6 +13,20 @@ async function getCatFact() {
         myToast.show();
 };
 
+async function getDogFact() {
+    const Fact = await fetch('https://dogapi.dog/api/v2/facts')
+        .then(res => res.json());
+
+        var wordCount = Fact.data[0].attributes.body.split(" ").length;  
+
+    var element = document.getElementById("myToast");
+    var myToast = new bootstrap.Toast(element, { autohide: false });
+        element.querySelector('.me-strong').innerText = "Dog Fact";
+        element.querySelector('.me-small').innerText = wordCount + " words";
+        element.querySelector('.toast-body').innerText = Fact.data[0].attributes.body;
+        myToast.show();
+}
+
 async function addAPIKey() {
     let apiKey = document.getElementById('APIKeyInput').value;
 
@@ -23,6 +37,8 @@ async function addAPIKey() {
 
     localStorage.setItem("GOOGLE_API_KEY", apiKey);
     alert('You have saved your API key!');
+    
+    window.location.reload();
 };
 
 async function viewAPIKey() {
@@ -38,9 +54,13 @@ async function viewAPIKey() {
 async function removeAPIKey() {
     localStorage.removeItem("GOOGLE_API_KEY");
     alert('You have removed your API key!');
+
+    window.location.reload();
 };
 
 async function removeAllAPIKeys() {
     localStorage.clear();
     alert('You have removed all existing API keys!');
+
+    window.location.reload();
 };
