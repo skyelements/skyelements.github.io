@@ -110,33 +110,35 @@
         <!-- Bootstrap - Card Row with Cards and Buttons -->
         <div class="container mb-3">
             <div class="row">
-                <!-- Gemini text box & disclaimer -->
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="mt-3 mb-3 d-flex gap-3">
-                            <input type="text" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-body-secondary" id="geminiInput" aria-describedby="geminiDisclaimer">
-                            <button id="geminiInputButton" class="green-button"><img src="/assets/icon/icons8-send-48.png" width="20" height="20" class="d-inline-block align-text-top"></button>
+                <div class="col">
+                    <!-- Gemini text box & disclaimer -->
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="mt-3 mb-3 d-flex gap-3">
+                                <input type="text" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-body-secondary" id="geminiInput" aria-describedby="geminiDisclaimer">
+                                <button id="geminiInputButton" class="green-button"><img src="/assets/icon/icons8-send-48.png" width="20" height="20" class="d-inline-block align-text-top"></button>
+                            </div>
+                            <p id="geminiDisclaimer" class="mb-2 form-text font-subscript">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
                         </div>
-                        <p id="geminiDisclaimer" class="mb-2 form-text font-subscript">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
                     </div>
-                </div>
-                <!-- Gemini response -->
-                <div id="geminiResponseCard" class="card text-center mt-4" style="display: none;">
-                    <div class="card-body">
-                        <div class="text-start mt-3">
-                            <h5 id="geminiOutputTitle" class="font-paragraph-bold"></h5>
-                            <!--- Bootstrap - Title Placeholder -->
-                            <h5 id="geminiOutputTitlePlaceholder" class="card-title placeholder-wave text-start" style="display: none;">
-                                <span class="placeholder col-1"></span>
-                            </h5>
-                        </div>
-                        <div class="mt-3">
-                            <div id="geminiOutputDesc" class="text-start font-paragraph mt-4"></div>
-                            <!--- Bootstrap - Desc Placeholder -->
-                            <div id="geminiOutputDescPlaceholder" class="card-text placeholder-wave text-start" style="display: none;">
-                                <span class="placeholder col-12"></span>
-                                <span class="placeholder col-12"></span>
-                                <span class="placeholder col-12"></span>
+                    <!-- Gemini response -->
+                    <div id="geminiResponseCard" class="card text-center mt-4" style="display: none;">
+                        <div class="card-body">
+                            <div class="text-start mt-3">
+                                <h5 id="geminiOutputTitle" class="font-paragraph-bold"></h5>
+                                <!--- Bootstrap - Title Placeholder -->
+                                <h5 id="geminiOutputTitlePlaceholder" class="card-title placeholder-wave text-start" style="display: none;">
+                                    <span class="placeholder col-1"></span>
+                                </h5>
+                            </div>
+                            <div class="mt-3">
+                                <div id="geminiOutputDesc" class="text-start font-paragraph mt-4"></div>
+                                <!--- Bootstrap - Desc Placeholder -->
+                                <div id="geminiOutputDescPlaceholder" class="card-text placeholder-wave text-start" style="display: none;">
+                                    <span class="placeholder col-12"></span>
+                                    <span class="placeholder col-12"></span>
+                                    <span class="placeholder col-12"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
