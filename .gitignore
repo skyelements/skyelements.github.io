@@ -1,2 +1,5 @@
 # Environment variables
 .env
+
+# Development Fonts
+assets/font/SF-Pro-Fonts-master
