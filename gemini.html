@@ -71,10 +71,10 @@
                     } 
                     else {
                         const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-                        const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
+                        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro-latest' });
 
                         const result = await model.generateContent({
-                            contents: [{ role: 'USER', parts: [{ text: prompt }] }],
+                            contents: [{ role: 'user', parts: [{ text: prompt }] }],
                             generationConfig: { temperature: 0.5, topP: 0.5, topK: 20 },
                             safetySettings: [
                                 { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
@@ -117,7 +117,7 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <div class="mt-3 mb-3 d-flex gap-3">
-                                <input type="text" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-body-secondary" id="geminiInput" aria-describedby="geminiDisclaimer">
+                                <input type="search" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-body-secondary" id="geminiInput" aria-describedby="geminiDisclaimer">
                                 <button id="geminiInputButton" class="green-button"><img src="/assets/icon/icons8-send-48.png" width="20" height="20" class="d-inline-block align-text-top"></button>
                             </div>
                             <p id="geminiDisclaimer" class="mb-2 form-text font-subscript">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
