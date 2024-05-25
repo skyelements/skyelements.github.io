@@ -1,32 +1,40 @@
-// Command toast for catfact
+// Cat Fact & Dog Fact commands
 async function getCatFact() {
     const Fact = await fetch('https://catfact.ninja/fact')
         .then(res => res.json());
 
-        var wordCount = Fact.fact.split(" ").length;  
+    const dialog = document.querySelector('md-dialog');
 
-    var element = document.getElementById("myToast");
-    var myToast = new bootstrap.Toast(element, { autohide: false });
-        element.querySelector('.me-strong').innerText = "Cat Fact";
-        element.querySelector('.me-small').innerText = wordCount + " words";
-        element.querySelector('.toast-body').innerText = Fact.fact;
-        myToast.show();
+    const title = dialog.querySelector('.dialog-title');
+    const description = dialog.querySelector('.dialog-description');
+    const button = dialog.querySelector('.dialog-button');
+
+        title.innerText = "Cat Fact";
+        description.innerText = Fact.fact;
+        button.innerText = "Close";
+
+    return dialog.setAttribute('open', '');
 };
 
 async function getDogFact() {
     const Fact = await fetch('https://dogapi.dog/api/v2/facts')
         .then(res => res.json());
 
-        var wordCount = Fact.data[0].attributes.body.split(" ").length;  
+    const dialog = document.querySelector('md-dialog');
 
-    var element = document.getElementById("myToast");
-    var myToast = new bootstrap.Toast(element, { autohide: false });
-        element.querySelector('.me-strong').innerText = "Dog Fact";
-        element.querySelector('.me-small').innerText = wordCount + " words";
-        element.querySelector('.toast-body').innerText = Fact.data[0].attributes.body;
-        myToast.show();
+    const title = dialog.querySelector('.dialog-title');
+    const description = dialog.querySelector('.dialog-description');
+    const button = dialog.querySelector('.dialog-button');
+
+        title.innerText = "Dog Fact";
+        description.innerText = Fact.data[0].attributes.body;
+        button.innerText = "Close";
+
+    return dialog.setAttribute('open', '');
 }
 
+
+// Add, View, Remove & Clear API keys
 async function addAPIKey() {
     let apiKey = document.getElementById('APIKeyInput').value;
 

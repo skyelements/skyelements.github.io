@@ -1,3 +1,13 @@
+:root {
+    /* Google Material Web - System Tokens */
+    --md-sys-color-primary: #212529;
+
+    /* Google Material Web - Component Tokens */
+    --md-dialog-container-color: #e9ecef;
+    --md-dialog-headline-color: #212529;
+    --md-dialog-supporting-text-color: #595c5f;
+}
+
 /* Fonts */
 @font-face {
     font-family: 'SF Pro Regular';
@@ -34,6 +44,13 @@
     font-size: 32px;
 }
 
+.font-subscript-bold {
+    font-family: "SF Pro Semibold", sans-serif;
+    font-weight: normal;
+    color: #595c5f;
+    font-size: 14px;
+}
+
 /* Page Contents */
 .button-component-div {
     position: relative;
@@ -53,17 +70,6 @@
 /* Cards */
 .card {
     margin-bottom: 20px; /* Adds a spacing between bootstrap cards when display is vertical (such as on Mobile) */
-}
-
-.card-div {
-    position: relative;
-    margin-left: 25px;
-    width: 25%;
-    border-radius: 6px;
-    border: 3px solid black;
-    padding: 25px 25px;
-    background-color: #dadada;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* Buttons */
@@ -200,17 +206,4 @@
     color: #ffffff;
     transition-duration: 0.4s;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/* Bootstrap - Toast */
-.toast-center {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999; /* Ensure the toast is above other elements */
-}
-
-.me-small {
-    margin-left: 190px;
 }
