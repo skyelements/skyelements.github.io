@@ -62,7 +62,7 @@
 .page-div {
     position: relative;
     margin-left: 25px;
-    width: 100%;
+    width: 90%; /* Width cannot be 100% because it exceeds the bootstrap container horizontal length and causes empty space on the right */
     padding-top: 25px;
     padding-bottom: 10px;
 }
