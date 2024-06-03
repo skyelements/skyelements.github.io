@@ -18,13 +18,22 @@
         <script type="importmap">
             {
               "imports": {
-                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+                "@google/generative-ai": "https://esm.run/@google/generative-ai",
+                "@material/web/": "https://esm.run/@material/web/"
               }
             }
         </script>
 
         <script type="module">
-            // Page initialization
+            // Google's Material Web dialog box
+            import '@material/web/all.js';
+
+            const dialog = document.querySelector('md-dialog');
+                const title = dialog.querySelector('.dialog-title');
+                const description = dialog.querySelector('.dialog-description');
+                const button = dialog.querySelector('.dialog-button');
+
+            // Gemini response card
             var card = document.getElementById('geminiResponseCard');
 
             var titlePlaceholder = document.getElementById('geminiOutputTitlePlaceholder');
@@ -66,7 +75,12 @@
                     const prompt = document.getElementById('geminiInput').value;
 
                     if (prompt === '') {
-                        window.alert('Error: You cannot leave the prompt empty.');
+                        title.innerText = "Error";
+                        description.innerText = "You cannot leave the prompt empty";
+                        button.innerText = "OK";
+
+                        dialog.setAttribute('open', '');
+
                         card.style.display = 'none';
                     } 
                     else {
@@ -89,7 +103,11 @@
                     }
                 }
                 catch (err) {
-                    window.alert(err);
+                    title.innerText = "Error";
+                    description.innerText = err;
+                    button.innerText = "OK";
+
+                    dialog.setAttribute('open', '');
 
                     window.location.reload();
                 }
@@ -147,6 +165,15 @@
                 </div>
             </div>
         </div>
+
+        <!-- Display content using Google's Material Web dialog box -->
+        <md-dialog>
+            <div slot="headline" class="dialog-title font-paragraph-bold"></div>
+            <form slot="content" id="form-id" method="dialog" class="dialog-description font-paragraph"></form>
+            <div slot="actions">
+              <md-text-button form="form-id" class="dialog-button font-subscript-bold"></md-text-button>
+            </div>
+        </md-dialog>
 
         <script>
             $(function(){
