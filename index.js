@@ -41,8 +41,6 @@ async function manageAPIKeys(param) {
         const description = dialog.querySelector('.dialog-description');
         const button = dialog.querySelector('.dialog-button');
 
-        button.innerText = "OK";
-
     switch(param) {
         case 'add':
             let apiKey = document.getElementById('APIKeyInput').value;
@@ -50,14 +48,19 @@ async function manageAPIKeys(param) {
             if (apiKey === '') {
                 title.innerText = "Error";
                 description.innerText = "Please enter an API key";
+                button.innerText = "OK";
 
                 break;
             }
+
+            // Clears the input field before displaying result
+            document.getElementById('APIKeyInput').value = '';
         
             localStorage.setItem("GOOGLE_API_KEY", apiKey);
 
             title.innerText = "";
             description.innerText = "You have saved your API key";
+            button.innerText = "Close";
 
             break;
 
@@ -68,17 +71,20 @@ async function manageAPIKeys(param) {
                 if (API_KEY === null) {
                     title.innerText = "Error";
                     description.innerText = "You do not have an API key saved";
+                    button.innerText = "OK";
 
                     break;
                 }
 
                 title.innerText = "Your API key is";
                 description.innerText = `${API_KEY}`;
+                button.innerText = "Close";
                 // [To-Do] Add a Copy button for users to copy their API key
             }
             catch {
                 title.innerText = "Error";
                 description.innerText = "There was an error getting your API key";
+                button.innerText = "OK";
             }
 
             break;
@@ -88,6 +94,7 @@ async function manageAPIKeys(param) {
 
             title.innerText = "";
             description.innerText = "You have removed your API key";
+            button.innerText = "Close";
 
             break;
 
@@ -96,6 +103,7 @@ async function manageAPIKeys(param) {
 
             title.innerText = "";
             description.innerText = "You have removed all existing API keys";
+            button.innerText = "Close";
 
             break;
     }

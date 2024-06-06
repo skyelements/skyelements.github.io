@@ -22,18 +22,6 @@
 
         <script type="module">
             import '@material/web/all.js';
-
-            // Event Listener to get OK button click status
-            const dialog = document.querySelector('md-dialog');
-
-            dialog.addEventListener('close', () => {
-                const okClicked = dialog.returnValue === 'ok';
-
-                // [To-Do] Reload the page for add / remove options only
-                if (okClicked === true) {
-                    window.location.reload();
-                }
-            });
         </script>
     </head>
     <body>
@@ -89,7 +77,7 @@
             <div slot="headline" class="dialog-title font-paragraph-bold"></div>
             <form slot="content" id="form-id" method="dialog" class="dialog-description font-paragraph"></form>
             <div slot="actions">
-              <md-text-button form="form-id" class="dialog-button font-subscript-bold" value="ok"></md-text-button>
+              <md-text-button form="form-id" class="dialog-button font-subscript-bold"></md-text-button>
             </div>
         </md-dialog>
 

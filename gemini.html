@@ -85,7 +85,7 @@
                     } 
                     else {
                         const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-                        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro-latest' });
+                        const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
                         const result = await model.generateContent({
                             contents: [{ role: 'user', parts: [{ text: prompt }] }],
@@ -98,6 +98,9 @@
                             ]
                         });
 
+                        // Clears the input field before displaying result
+                        document.getElementById('geminiInput').value = '';
+
                         document.getElementById("geminiOutputTitle").innerHTML = "Result";
                         document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
                     }
@@ -109,7 +112,7 @@
 
                     dialog.setAttribute('open', '');
 
-                    window.location.reload();
+                    card.style.display = 'none';
                 }
             }
         </script>
