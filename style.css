@@ -32,16 +32,22 @@
     src: url('/assets/font/SF-Pro-Text-Semibold.otf');
 }
 
-.font-paragraph-bold {
-    font-family: "SF Pro Semibold", sans-serif;
-    font-weight: normal;
-    font-size: 20px;
-}
-
 .font-title {
     font-family: "SF Pro Semibold", sans-serif;
     font-weight: normal;
     font-size: 32px;
+}
+
+.font-header {
+    font-family: "SF Pro Semibold", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.font-paragraph-bold {
+    font-family: "SF Pro Semibold", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
 }
 
 .font-subscript-bold {
@@ -120,7 +126,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: #f0f6fc1a;
-    color: #ffffff;
+    color: #000000;
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
@@ -189,7 +195,7 @@
 
 .yellow-button:hover {
     background-color: #ffc107;
-    color: #ffffff;
+    color: #000000;
     transition-duration: 0.4s;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
