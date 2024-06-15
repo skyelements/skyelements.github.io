@@ -5,11 +5,11 @@
 
 ## Pages
 ###### Active
-index
-sodium
-commands
-gemini
-apikeys
+index, sodium, commands, gemini, apikeys
 
 ###### Hidden
 signin
+
+## Problems
+###### Favicon
+Currently the favicon doesn't update for some reason
