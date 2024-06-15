@@ -1,19 +1,15 @@
 <p align="center">
-    <h1 align="center">html</h1>
+    <h1 align="center">SkyElements</h1>
 </p>
 <br/>
 
-## Home
-Home of everything web development.
+## Pages
+###### Active
+index
+sodium
+commands
+gemini
+apikeys
 
-## Gemini
-Chat with Gemini, an AI powered chatbot by Google.
-
-## Commands
-Preview commands from Sodium, an open source Discord bot by SkyElements.
-
-## API keys
-Add, view, or remove your secret keys.
-
-## Sign in
-An authentication portal for users.
+###### Hidden
+signin
