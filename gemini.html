@@ -98,9 +98,6 @@
                             ]
                         });
 
-                        // Clears the input field before displaying result
-                        document.getElementById('geminiInput').value = '';
-
                         document.getElementById("geminiOutputTitle").innerHTML = "Result";
                         document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
                     }
@@ -114,6 +111,8 @@
 
                     card.style.display = 'none';
                 }
+                // Clears the input field after displaying the result
+                document.getElementById('geminiInput').value = '';
             }
         </script>
     </head>

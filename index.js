@@ -44,6 +44,7 @@ async function manageAPIKeys(param) {
     switch(param) {
         case 'add':
             let apiKey = document.getElementById('APIKeyInput').value;
+                encodedApiKey = encodeURIComponent(apiKey);
 
             if (apiKey === '') {
                 title.innerText = "Error";
@@ -55,8 +56,8 @@ async function manageAPIKeys(param) {
 
             // Clears the input field before displaying result
             document.getElementById('APIKeyInput').value = '';
-        
-            localStorage.setItem("GOOGLE_API_KEY", apiKey);
+
+            localStorage.setItem("GOOGLE_API_KEY", encodedApiKey);
 
             title.innerText = "";
             description.innerText = "You have saved your API key";
