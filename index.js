@@ -111,3 +111,8 @@ async function manageAPIKeys(param) {
 
     dialog.setAttribute('open', '');
 }
+
+// Copy Sodium GitHub clone command to clipboard
+function copySodiumClone() {
+    navigator.clipboard.writeText("git clone https://github.com/yewshanooi/sodium.git");
+}
