@@ -76,11 +76,25 @@ async function manageAPIKeys(param) {
 
                     break;
                 }
+                else {
+                    title.innerText = "Your API key is";
+                    description.innerText = `${API_KEY}`;
+                    button.innerText = "Copy";
+    
+                    // Event Listener to check whether button is clicked
+                    dialog.addEventListener('close', GetButtonClick);
+    
+                    function GetButtonClick() {
+                        const buttonIsClicked = dialog.returnValue === 'dialogButton';
+    
+                        if (buttonIsClicked) {
+                            navigator.clipboard.writeText(API_KEY);
+                        }
+    
+                        dialog.removeEventListener('close', GetButtonClick);
+                    }
+                }
 
-                title.innerText = "Your API key is";
-                description.innerText = `${API_KEY}`;
-                button.innerText = "Close";
-                // [To-Do] Add a Copy button for users to copy their API key
             }
             catch {
                 title.innerText = "Error";
@@ -114,5 +128,5 @@ async function manageAPIKeys(param) {
 
 // Copy Sodium GitHub clone command to clipboard
 function copySodiumClone() {
-    navigator.clipboard.writeText("git clone https://github.com/yewshanooi/sodium.git");
+    return navigator.clipboard.writeText("git clone https://github.com/yewshanooi/sodium.git");
 }
