@@ -5,7 +5,7 @@
 
 ## Pages
 ###### Active
-Index (Home Page), Sodium, Commands, Gemini, API Keys, Credits
+Index (Home Page), Sodium, Commands, API Keys, Credits
 
 ###### Hidden
 Sign in
