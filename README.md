@@ -8,4 +8,4 @@
 Index (Home Page), Sodium, Commands, API Keys, Credits
 
 ###### Hidden
-Sign in
+Sign in, Sign up

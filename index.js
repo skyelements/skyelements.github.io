@@ -130,3 +130,61 @@ async function manageAPIKeys(param) {
 function copySodiumClone() {
     return navigator.clipboard.writeText("git clone https://github.com/yewshanooi/sodium.git");
 }
+
+// Sign in to SkyElements
+function signIn() {
+    let userEmail = document.getElementById('inputEmail').value;
+    let userPassword = document.getElementById('inputPassword').value;
+
+    if (userEmail === '') {
+        window.alert("Error: Please enter an email");
+        return;
+    }
+
+    if (userPassword === '') {
+        window.alert("Error: Please enter a password");
+        return;
+    }
+
+    const USER_EMAIL = localStorage.getItem("USER_EMAIL");
+    const USER_PASSWORD = localStorage.getItem("USER_PASSWORD");
+
+    if (USER_EMAIL != userEmail) {
+        window.alert("Error: Invalid email");
+        return;
+    }
+
+    if (USER_PASSWORD != userPassword) {
+        window.alert("Error: Invalid password");
+        return;
+    }
+
+    location.replace("index.html");
+
+    window.alert(`Welcome ${USER_EMAIL} to SkyElements`);
+}
+
+// Sign up with SkyElements
+function signUp() {
+    let userEmail = document.getElementById('inputEmail').value;
+    let userPassword = document.getElementById('inputPassword').value;
+
+    if (userEmail === '') {
+        window.alert("Error: Please enter an email");
+        return;
+    }
+
+    if (userPassword === '') {
+        window.alert("Error: Please enter a password");
+        return;
+    }
+
+        // For debugging purposes only, remove this 2 lines below for live code.
+        localStorage.removeItem("USER_EMAIL");
+        localStorage.removeItem("USER_PASSWORD");
+
+    localStorage.setItem("USER_EMAIL", userEmail);
+    localStorage.setItem("USER_PASSWORD", userPassword);
+
+    location.replace("index.html");
+}
