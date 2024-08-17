@@ -71,6 +71,14 @@
     margin-bottom: 20px; /* Adds a spacing between bootstrap cards when display is vertical (such as on Mobile) */
 }
 
+.card-bg {
+    background-color: #ebebeb;
+}
+
+.card-bg-light {
+    background-color: #f7f7f7;
+}
+
 /* Buttons */
 .black-button {
     background-color: #000000;
