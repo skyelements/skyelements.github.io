@@ -5,7 +5,7 @@
 
 ## Pages
 ###### Active
-Index (Home Page), Sodium, Commands, API Keys, Credits, Cookie Policy
+Index (Home Page), Sodium, Commands, API Keys, Branding, Credits, Cookie Policy
 
 ###### Hidden
 Login (Sign in), Register (Sign up)
