@@ -105,16 +105,28 @@ async function manageAPIKeys(param) {
             break;
 
         case 'removeGoogle':
-            localStorage.removeItem("GOOGLE_API_KEY");
+            const API_KEY = localStorage.getItem("GOOGLE_API_KEY");
 
-            title.innerText = "";
-            description.innerText = "You have removed your API key";
-            button.innerText = "Close";
+            if (API_KEY === null) {
+                title.innerText = "Error";
+                description.innerText = "You do not have an API key saved";
+                button.innerText = "OK";
+
+                break;
+            }
+            else {
+                localStorage.removeItem("GOOGLE_API_KEY");
+
+                title.innerText = "";
+                description.innerText = "You have removed your API key";
+                button.innerText = "Close";
+            }
 
             break;
 
         case 'remove':
-            localStorage.clear();
+            // Since currently theres only one API key, "localStorage.clear();" is not used
+            localStorage.removeItem("GOOGLE_API_KEY");
 
             title.innerText = "";
             description.innerText = "You have removed all existing API keys";
