@@ -17,12 +17,89 @@
         <div id="navbar"></div>
 
         <main>
-            <div class="page-div mt-3 mb-3 col-lg-7 p-4">
-                <h2 class="font-title">Home of everything open sourced</h2>
-                <p class="font-paragraph">Start hosting open source projects on the web or locally on your device with just a few commands</p>
-                <a href="sodium.html" class="black-button mt-4">Featured project</a>
+            <div class="container mb-3 p-4 mt-4">
+                <div class="p-5 text-center card-bg rounded-4">
+                    <h2 class="font-title">Home of everything open sourced</h2>
+                    <p class="font-paragraph">Run open source projects on the web or locally on your device with just a few commands</p>
+                </div>
             </div>
         </main>
+
+
+        <div class="container mb-3 p-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="p-5 card-bg-light rounded-4 mb-4">
+                        <div class="card-body">
+                            <h3 class="font-header mb-4">Projects</h3>
+                            <div class="d-flex justify-content-center">
+                                <!-- Sodium -->
+                                <div class="col-lg-6">
+                                    <div class="p-5 bg-secondary-subtle rounded-4 text-center">
+                                        <div class="card-body">
+                                            <img src="src/logo/sodium.png" alt="Sodium" width="96" height="96" class="d-inline-block align-items-center mb-4">
+                                            <h5 class="card-title font-paragraph-bold">Sodium</h5>
+                                            <p class="card-text font-paragraph mt-2">Open source discord bot with application commands and a user-friendly interface</p>
+                                            <div class="mt-3">
+                                                <a href="sodium.html" class="black-button">View ➜</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+
+                <div class="col-sm-12">
+                    <div class="p-5 card-bg-light rounded-4 mb-4">
+                        <div class="card-body">
+                            <h3 class="font-header mb-4">News</h3>
+                            <div class="row">
+                                <!-- News Card 1 -->
+                                <div class="col-lg-6">
+                                    <div class="p-5 bg-secondary-subtle rounded-4 mb-3">
+                                        <h5 class="font-paragraph-bold">Sodium <span class="font-subscript" style="margin-left: 5px;">Discord Bot</span></h5>
+                                        <p class="font-paragraph mt-2">New version of Sodium has been released with important updates, new features, and bug fixes.</p>
+                                        <div class="mt-4">
+                                            <a href="https://github.com/yewshanooi/sodium/releases/tag/1.6.8" target="_blank" class="font-paragraph text-muted text-decoration-none">
+                                                View on <img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> 
+                                                <span class="font-bold">GitHub</span> ➜
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- News Card 2 -->
+                                <div class="col-lg-6">
+                                    <div class="p-5 bg-secondary-subtle rounded-4">
+                                        <h5 class="font-paragraph-bold">SkyElements <span class="font-subscript" style="margin-left: 5px;">Website</span></h5>
+                                        <p class="font-paragraph mt-2">Updated card styling for pages and Gemini command version and parameters.</p>
+                                        <div class="mt-4">
+                                            <a href="https://github.com/skyelements/skyelements.github.io/commits/main/" target="_blank" class="font-paragraph text-muted text-decoration-none">
+                                                View on <img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> 
+                                                <span class="font-bold">GitHub</span> ➜
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer class="d-flex justify-content-center align-items-center py-5">
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <a class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="src/logo/skyelements-green-1.png" alt="SkyElements" width="36" height="36">
+                </a>
+                <span class="mb-3 mb-md-0 font-subscript-bold">&copy; SkyElements. All rights reserved.</span>
+            </div>
+        </footer>
+
 
         <script>
             $(function(){
