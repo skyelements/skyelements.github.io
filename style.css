@@ -235,9 +235,7 @@
     box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
 }
 
-
-
-.clickable-card:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+/* Custom Parameters */
+.button-fixed-width {
+    width: 75px;
 }
