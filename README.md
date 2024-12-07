@@ -1,6 +1,6 @@
 <p align="center">
     <h1 align="center">SkyElements</h1>
-    <p align="center">Open source discord bot with application commands and a user-friendly interface</p>
+    <p align="center">Home of everything open sourced</p>
 </p>
 <br/>
 
