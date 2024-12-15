@@ -239,3 +239,8 @@
 .button-fixed-width {
     width: 75px;
 }
+
+.card-clickable {
+    text-decoration: none;
+    color: inherit;
+}
