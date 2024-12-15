@@ -85,17 +85,19 @@
                     } 
                     else {
                         const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-                        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+                        const model = genAI.getGenerativeModel({
+                            model: 'gemini-2.0-flash-exp',
+                            // systemInstruction: 'All questions should be answered comprehensively with details, unless the user requests a concise response specifically. Respond in the same language as the query.',
+                        });
 
                         const result = await model.generateContent({
                             contents: [{ role: 'user', parts: [{ text: prompt }] }],
-                            generationConfig: { temperature: 1.0, topP: 0.95, candidateCount: 1, maxOutputTokens: 1024 },
-                            systemInstruction: { parts: [{ text: 'All questions should be answered comprehensively with details, unless the user requests a concise response specifically. Respond in the same language as the query.' }] },
+                            generationConfig: { temperature: 1, topP: 0.95, topK: 40, candidateCount: 1, maxOutputTokens: 1024 },
                             safetySettings: [
-                                { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
                                 { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
                                 { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-                                { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE }
+                                { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+                                { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE }
                             ]
                         });
 
@@ -159,7 +161,7 @@
                     <!-- Gemini - Text box & disclaimer -->
                     <div class="p-5 card-bg-light rounded-4 mb-4 text-center">
                         <div class="card-body">
-                            <h5 class="card-title font-paragraph-bold">Gemini <span class="font-subscript" style="margin-left: 5px;">1.5 Flash</span></h5>
+                            <h5 class="card-title font-paragraph-bold">Gemini <span class="font-subscript" style="margin-left: 5px;">2.0 Flash (Experimental)</span></h5>
                             <p class="card-text font-paragraph mt-2">Chat with Gemini, an AI powered chatbot by Google</p>
                             <div class="mt-3 mb-3 d-flex gap-3">
                                 <input type="search" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-secondary-subtle" id="geminiInput">
