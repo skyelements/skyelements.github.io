@@ -182,6 +182,7 @@ function signIn() {
     }
 
     location.replace("index.html");
+    localStorage.setItem("authenticated", "true");
 
     window.alert(`Welcome ${USER_EMAIL} to SkyElements`);
 }
@@ -201,12 +202,17 @@ function signUp() {
         return;
     }
 
-        // For debugging purposes only, remove this 2 lines below for live code.
-        localStorage.removeItem("USER_EMAIL");
-        localStorage.removeItem("USER_PASSWORD");
-
     localStorage.setItem("USER_EMAIL", userEmail);
     localStorage.setItem("USER_PASSWORD", userPassword);
 
     location.replace("index.html");
+    localStorage.setItem("authenticated", "true");
+}
+
+// Sign out of SkyElements
+function signOut() {
+    location.replace("index.html");
+    localStorage.setItem("authenticated", "false");
+
+    window.alert(`Successfully logged out`);
 }

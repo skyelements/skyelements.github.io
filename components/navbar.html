@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <body>
+
     <nav class="navbar navbar-expand-lg">
-
-        <div class="container-fluid font-paragraph mt-2">
-          <a class="navbar-brand" href="/"><img src="src/logo/skyelements.png" alt="SkyElements" width="191" height="44" class="d-inline-block mb-1"></a>
-          <!-- <span class="navbar-brand mb-0 font-paragraph-bold">SkyElements</span> -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav me-auto">
-              <a class="nav-link nav-link-box text-dark p-2" href="sodium.html">Sodium</a>
-              <a class="nav-link nav-link-box text-dark p-2" href="commands.html">Commands</a>
-              <a class="nav-link nav-link-box text-dark p-2" href="api-keys.html">API Keys</a>
-              <li class="nav-item dropdown">
-                <a class="nav-link nav-link-box text-dark dropdown-toggle p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">More </a>
-                <ul class="dropdown-menu p-1">
-                  <li><a class="nav-link nav-link-box text-dark p-2" href="branding.html">Branding</a></li>
-                  <li><a class="nav-link nav-link-box text-dark p-2" href="credits.html">Credits</a></li>
-                  <li><a class="nav-link nav-link-box text-dark p-2" href="cookie-policy.html">Cookie Policy</a></li>
-                </ul>
-              </li>
-            </div>
-            <div class="navbar-nav">
-              <!-- [Note] Add class="me-2" in the <a> tags below for extra spacing -->
-              <a class="nav-link nav-link-box text-dark font-paragraph-bold p-2" href="https://github.com/skyelements/skyelements.github.io"><img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> GitHub</a>
-              <!-- <a class="nav-link nav-link-box text-dark p-2" href="signin.html">Sign in</a>
-              <a class="nav-link nav-link-box text-dark font-paragraph-bold p-2" href="signup.html">Sign up</a> -->
-            </div>
+      <div class="container-fluid font-paragraph mt-2">
+        <a class="navbar-brand" href="/"><img src="src/logo/skyelements.png" alt="SkyElements" width="191" height="44" class="d-inline-block mb-1"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav me-auto">
+            <a class="nav-link nav-link-box text-dark p-2" href="sodium.html">Sodium</a>
+            <a class="nav-link nav-link-box text-dark p-2" href="commands.html">Commands</a>
+            <a class="nav-link nav-link-box text-dark p-2" href="api-keys.html">API Keys</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-link-box text-dark dropdown-toggle p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">More </a>
+              <ul class="dropdown-menu p-1">
+                <li><a class="nav-link nav-link-box text-dark p-2" href="branding.html">Branding</a></li>
+                <li><a class="nav-link nav-link-box text-dark p-2" href="credits.html">Credits</a></li>
+                <li><a class="nav-link nav-link-box text-dark p-2" href="cookie-policy.html">Cookie Policy</a></li>
+              </ul>
+            </li>
           </div>
-
+          <div class="navbar-nav">
+            <a class="nav-link nav-link-box text-dark font-paragraph-bold p-2" href="https://github.com/skyelements/skyelements.github.io">
+              <img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> GitHub
+            </a>
+            <a class="nav-link nav-link-box text-dark p-2" id="loginBtn" href="login.html">Sign in</a>
+            <li class="nav-item dropdown" id="profileBtn" style="display: none;">
+              <a class="nav-link nav-link-box text-dark dropdown-toggle font-paragraph-bold p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="profileName">${USER_EMAIL}</a>
+              <ul class="dropdown-menu p-1">
+                <li><a class="nav-link nav-link-box text-danger p-2" onclick="signOut()">Logout</a></li>
+              </ul>
+            </li>
+          </div>
         </div>
+      </div>
     </nav>
+
+    <script>
+      $(document).ready(function() {
+        if (localStorage.getItem("authenticated") === "true") {
+          var profileName = localStorage.getItem("USER_EMAIL");
+
+          $('#loginBtn').hide();
+          $('#profileBtn').show();
+          $('#profileName').text(profileName);
+        } else {
+          $('#loginBtn').show();
+          $('#profileBtn').hide();
+        }
+      });
+    </script>
+
+  </body>
 </html>

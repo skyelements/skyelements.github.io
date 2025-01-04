@@ -40,7 +40,7 @@
                             <div class="mb-3">
                                 <div style="display: flex; justify-content: space-between;">
                                     <label for="inputPassword" class="mb-2 font-paragraph">Password</label>
-                                    <a class="mt-1 text-muted font-subscript" style="text-decoration: none; text-align: right;" href="">Forgot password?</a> <!-- Add a href for Password Reset page -->
+                                    <!-- <a class="mt-1 text-muted font-subscript" style="text-decoration: none; text-align: right;" href="">Forgot password?</a> -->
                                 </div>
                                 <input type="password" id="inputPassword" class="form-control font-paragraph border-0 bg-body-secondary" required style="width: 100%;">
                             </div>
@@ -52,7 +52,7 @@
 
                             <!-- buttonSignIn -->
                             <div style="display: flex; justify-content: center; align-items: center;">
-                                <button class="blue-button mt-3" id="buttonSignIn" onclick="signIn()">Sign in</button>
+                                <a class="blue-button mt-3" id="buttonSignIn" onclick="signIn()">Sign in</a>
                             </div>
 
                             <!-- buttonSignInGoogle, buttonSignInMicrosoft, buttonSignInMeta -->
@@ -71,6 +71,14 @@
                 </div>
             </section>
         </main>
+
+        <script>
+            $(document).ready(function() {
+                if (localStorage.getItem("authenticated") === "true") {
+                    window.location.href = '/';
+                }
+            });
+        </script>
 
     </body>
 </html>
