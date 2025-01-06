@@ -139,7 +139,7 @@ async function manageAPIKeys(param) {
 }
 
 // Copy Sodium GitHub clone command to clipboard
-function sodiumCloneLink() {
+async function sodiumCloneLink() {
     const dialog = document.querySelector('md-dialog');
 
     const title = dialog.querySelector('.dialog-title');
@@ -184,7 +184,7 @@ function signIn() {
     location.replace("index.html");
     localStorage.setItem("authenticated", "true");
 
-    window.alert(`Welcome ${USER_EMAIL} to SkyElements`);
+    window.alert(`Welcome ${USER_EMAIL} to SkyElements!`);
 }
 
 // Sign up with SkyElements
@@ -214,5 +214,5 @@ function signOut() {
     location.replace("index.html");
     localStorage.setItem("authenticated", "false");
 
-    window.alert(`Successfully logged out`);
+    window.alert(`Successfully logged out!`);
 }
