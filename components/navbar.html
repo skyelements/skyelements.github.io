@@ -26,13 +26,13 @@
             <a class="nav-link nav-link-box text-dark font-paragraph-bold p-2" href="https://github.com/skyelements/skyelements.github.io">
               <img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> GitHub
             </a>
-            <a class="nav-link nav-link-box text-dark p-2" id="loginBtn" href="login.html">Sign in</a>
+            <!-- <a class="nav-link nav-link-box text-dark p-2" id="loginBtn" href="login.html">Sign in</a>
             <li class="nav-item dropdown" id="profileBtn" style="display: none;">
-              <a class="nav-link nav-link-box text-dark dropdown-toggle font-paragraph-bold p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="profileName">${USER_EMAIL}</a>
+              <a class="nav-link nav-link-box text-dark dropdown-toggle font-paragraph-bold p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="profileName">${USER_EMAIL} </a>
               <ul class="dropdown-menu p-1">
                 <li><a class="nav-link nav-link-box text-danger p-2" onclick="signOut()">Logout</a></li>
               </ul>
-            </li>
+            </li> -->
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
 
           $('#loginBtn').hide();
           $('#profileBtn').show();
-          $('#profileName').text(profileName);
+          $('#profileName').text(`${profileName} `);
         } else {
           $('#loginBtn').show();
           $('#profileBtn').hide();
