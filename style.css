@@ -234,16 +234,11 @@
     box-shadow: 0 0 0 3px rgb(33, 37, 41), 0 0 15px rgba(0,0,0,0.75), 0 0 5px rgba(0,0,0,0.75) inset;
 }
 
-.link-style-gold {
-    box-shadow: 0 0 0 0 rgb(33, 37, 41);
-    display: inline-block;
+/* Navigation Bar Active Item */
+.nav-link.active {
+    background-color: #ebebeb;
+    color: rgb(33, 37, 41);
     border-radius: 10px;
-    margin: 2px;
-}
-
-.link-style-gold:hover {
-    transition: box-shadow 0.2s ease;
-    box-shadow: 0 0 0 3px #fac22f, 0 0 15px #ff8c00, 0 0 5px #ffd700 inset;
 }
 
 /* Custom Parameters */

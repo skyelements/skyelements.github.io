@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <body>
-
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid font-paragraph mt-2">
         <a class="navbar-brand" href="/"><img src="src/logo/skyelements.png" alt="SkyElements" width="191" height="44" class="d-inline-block mb-1"></a>
@@ -10,7 +9,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav me-auto">
-            <a class="nav-link link-style-gold text-dark p-2" href="sodium.html">Sodium</a>
+            <a class="nav-link link-style text-dark p-2" href="sodium.html">Sodium</a>
             <a class="nav-link link-style text-dark p-2" href="commands.html">Commands</a>
             <a class="nav-link link-style text-dark p-2" href="branding.html">Branding</a>
             <a class="nav-link link-style text-dark p-2" href="credits.html">Credits</a>
@@ -24,6 +23,18 @@
         </div>
       </div>
     </nav>
-
   </body>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </html>
