@@ -221,18 +221,29 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/* Navigation Bar */
-.nav-link-box {
+/* Navigation Bar Items */
+.link-style {
+    box-shadow: 0 0 0 0 rgb(33, 37, 41);
     display: inline-block;
-    border-radius: 8px;
-    height: 40px;
-    margin: 1px; /* Horizontal spacing between page links */
+    border-radius: 6px;
+    margin: 1px;
 }
 
-.nav-link-box:hover {
-    background-color: #d6d9da; /* An alternative "darker" colour: #b1b3b4 */
-    transition-duration: 0.2s;
-    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+.link-style:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0 0 0 2.5px rgb(33, 37, 41), 0 0 15px rgba(0,0,0,0.75), 0 0 5px rgba(0,0,0,0.75) inset;
+}
+
+.link-style-gold {
+    box-shadow: 0 0 0 0 rgb(33, 37, 41);
+    display: inline-block;
+    border-radius: 6px;
+    margin: 1px;
+}
+
+.link-style-gold:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0 0 0 2.5px #fac22f, 0 0 15px #ff8c00, 0 0 5px #ffd700 inset;
 }
 
 /* Custom Parameters */
