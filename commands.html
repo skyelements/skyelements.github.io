@@ -18,7 +18,6 @@
         <script type="importmap">
             {
               "imports": {
-                "@google/generative-ai": "https://esm.run/@google/generative-ai",
                 "@material/web/": "https://esm.run/@material/web/"
               }
             }
@@ -32,88 +31,6 @@
                 const title = dialog.querySelector('.dialog-title');
                 const description = dialog.querySelector('.dialog-description');
                 const button = dialog.querySelector('.dialog-button');
-
-            // Gemini - Response card
-            var card = document.getElementById('geminiResponseCard');
-
-            var titlePlaceholder = document.getElementById('geminiOutputTitlePlaceholder');
-            var descPlaceholder = document.getElementById('geminiOutputDescPlaceholder');
-
-            function attachEventListener() {
-                document.getElementById('geminiInputButton').addEventListener('click', function() {
-                    this.outerHTML = `<button id="geminiInputButton" class="green-button button-fixed-width" type="button" disabled>
-                    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-                    </button>`;
-                document.getElementById("geminiOutputTitle").innerHTML = "";
-                document.getElementById("geminiOutputDesc").innerHTML = "";
-
-                card.style.display = "block";
-
-                titlePlaceholder.style.display = 'block';
-                descPlaceholder.style.display = 'block';
-
-                    fetchGemini().then(function() {
-                        titlePlaceholder.style.display = 'none';
-                        descPlaceholder.style.display = 'none';
-
-                        document.getElementById('geminiInputButton').outerHTML = '<button id="geminiInputButton" class="green-button button-fixed-width"><img src="/src/icon/icons8-send-48.png" alt="Submit" width="20" height="20" class="d-inline-block align-text-top"></button>';
-
-                        attachEventListener();
-                    });
-                });
-            }
-
-            attachEventListener();
-
-
-            import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-
-            async function fetchGemini() {
-                try {
-                    const GOOGLE_API_KEY = localStorage.getItem("GOOGLE_API_KEY");
-
-                    const prompt = document.getElementById('geminiInput').value;
-
-                    if (prompt === '') {
-                        title.innerText = "Error";
-                        description.innerText = "You cannot leave the prompt empty";
-                        button.innerText = "OK";
-
-                        dialog.setAttribute('open', '');
-
-                        card.style.display = 'none';
-                    } 
-                    else {
-                        const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-                        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-
-                        const result = await model.generateContent({
-                            contents: [{ role: 'user', parts: [{ text: prompt }] }],
-                            generationConfig: { temperature: 1, topP: 0.95, topK: 40, candidateCount: 1, maxOutputTokens: 1024 },
-                            safetySettings: [
-                                { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-                                { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-                                { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
-                                { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE }
-                            ]
-                        });
-
-                        document.getElementById("geminiOutputTitle").innerHTML = "Response";
-                        document.getElementById("geminiOutputDesc").innerHTML = marked.parse(result.response.text());
-                    }
-                }
-                catch (err) {
-                    title.innerText = "Error";
-                    description.innerText = err;
-                    button.innerText = "OK";
-
-                    dialog.setAttribute('open', '');
-
-                    card.style.display = 'none';
-                }
-                // Clears the input field after displaying the result
-                document.getElementById('geminiInput').value = '';
-            }
         </script>
     </head>
     <body>
@@ -149,42 +66,6 @@
                             <p class="card-text font-paragraph mt-2">Get a random dog fact</p>
                             <div class="mt-3">
                                 <button onclick="getDogFact()" class="green-button">Preview</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Gemini -->
-                <div class="col-sm-12">
-                    <!-- Gemini - Text box & disclaimer -->
-                    <div class="p-5 card-bg-light rounded-4 mb-4 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title font-paragraph-bold">Gemini <span class="font-subscript" style="margin-left: 5px;">2.0 Flash</span></h5>
-                            <p class="card-text font-paragraph mt-2">Chat with Gemini, an AI-powered chatbot by Google</p>
-                            <div class="mt-3 mb-3 d-flex gap-3">
-                                <input type="search" placeholder="Enter a prompt here" class="form-control font-paragraph border-0 bg-secondary-subtle" id="geminiInput">
-                                <button id="geminiInputButton" class="green-button button-fixed-width"><img src="/src/icon/icons8-send-48.png" alt="Submit" width="20" height="20" class="d-inline-block align-text-top"></button>
-                            </div>
-                            <p class="mb-2 form-text font-subscript">Gemini may display inaccurate info, including about people, so double-check its responses. A Google Cloud <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-muted">API key</a> is required to run.</p>
-                        </div>
-                    </div>
-                    <!-- Gemini - Response -->
-                    <div id="geminiResponseCard" class="p-5 card-bg rounded-4 mb-4 text-center" style="display: none;">
-                        <div class="card-body">
-                            <div class="text-start mt-3">
-                                <h5 id="geminiOutputTitle" class="font-paragraph-bold"></h5>
-                                <!--- Bootstrap title placeholder -->
-                                <h5 id="geminiOutputTitlePlaceholder" class="card-title placeholder-glow placeholder-wave text-start" style="display: none;">
-                                    <span class="placeholder col-1 placeholder-lg"></span>
-                                </h5>
-                            </div>
-                            <div class="mt-3">
-                                <div id="geminiOutputDesc" class="text-start font-paragraph mt-4"></div>
-                                <!--- Bootstrap desc placeholder -->
-                                <div id="geminiOutputDescPlaceholder" class="card-text placeholder-glow placeholder-wave text-start" style="display: none;">
-                                    <span class="placeholder col-12"></span>
-                                    <span class="placeholder col-12"></span>
-                                    <span class="placeholder col-12"></span>
-                                </div>
                             </div>
                         </div>
                     </div>

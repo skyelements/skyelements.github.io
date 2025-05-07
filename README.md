@@ -5,8 +5,4 @@
 <br/>
 
 ## Pages
-###### Active
-Index (Home Page), Sodium, Commands, API Keys, Branding, Credits, Cookie Policy
-
-###### Hidden
-Login (Sign in), Register (Sign up)
+Index, Sodium, Commands, Branding, Credits, Cookie Policy

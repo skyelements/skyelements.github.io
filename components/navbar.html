@@ -12,7 +12,6 @@
           <div class="navbar-nav me-auto">
             <a class="nav-link nav-link-box text-dark p-2" href="sodium.html">Sodium</a>
             <a class="nav-link nav-link-box text-dark p-2" href="commands.html">Commands</a>
-            <a class="nav-link nav-link-box text-dark p-2" href="api-keys.html">API Keys</a>
             <li class="nav-item dropdown">
               <a class="nav-link nav-link-box text-dark dropdown-toggle p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">More </a>
               <ul class="dropdown-menu p-1">
@@ -26,32 +25,10 @@
             <a class="nav-link nav-link-box text-dark font-paragraph-bold p-2" href="https://github.com/skyelements/skyelements.github.io">
               <img src="src/logo/github.png" alt="GitHub" width="24" height="24" class="d-inline-block align-top"> GitHub
             </a>
-            <!-- <a class="nav-link nav-link-box text-dark p-2" id="loginBtn" href="login.html">Sign in</a>
-            <li class="nav-item dropdown" id="profileBtn" style="display: none;">
-              <a class="nav-link nav-link-box text-dark dropdown-toggle font-paragraph-bold p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="profileName">${USER_EMAIL} </a>
-              <ul class="dropdown-menu p-1">
-                <li><a class="nav-link nav-link-box text-danger p-2" onclick="signOut()">Logout</a></li>
-              </ul>
-            </li> -->
           </div>
         </div>
       </div>
     </nav>
-
-    <script>
-      $(document).ready(function() {
-        if (localStorage.getItem("authenticated") === "true") {
-          var profileName = localStorage.getItem("USER_EMAIL");
-
-          $('#loginBtn').hide();
-          $('#profileBtn').show();
-          $('#profileName').text(`${profileName} `);
-        } else {
-          $('#loginBtn').show();
-          $('#profileBtn').hide();
-        }
-      });
-    </script>
 
   </body>
 </html>
