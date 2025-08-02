@@ -10,54 +10,55 @@
 
 /* Fonts */
 @font-face {
-    font-family: 'SF Pro Regular';
-    src: url('/src/font/SF-Pro-Text-Regular.otf');
+    font-family: 'Inter 18pt Regular';
+    src: url('/src/font/Inter_18pt-Regular.ttf');
 }
 
 .font-paragraph {
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-weight: normal;
     font-size: 16px;
 }
 
 .font-subscript {
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-weight: normal;
     color: #595c5f;
     font-size: 14px;
 }
 
 @font-face {
-    font-family: 'SF Pro Semibold';
-    src: url('/src/font/SF-Pro-Text-Semibold.otf');
+    font-family: 'Inter 18pt Semibold';
+    src: url('/src/font/Inter_18pt-SemiBold.ttf');
 }
 
+
 .font-title {
-    font-family: "SF Pro Semibold", sans-serif;
+    font-family: "Inter 18pt Semibold", sans-serif;
     font-weight: normal;
     font-size: 32px;
 }
 
 .font-header {
-    font-family: "SF Pro Semibold", sans-serif;
+    font-family: "Inter 18pt Semibold", sans-serif;
     font-weight: normal;
     font-size: 24px;
 }
 
 .font-paragraph-bold {
-    font-family: "SF Pro Semibold", sans-serif;
+    font-family: "Inter 18pt Semibold", sans-serif;
     font-weight: normal;
     font-size: 20px;
 }
 
 .font-bold {
-    font-family: "SF Pro Semibold", sans-serif;
+    font-family: "Inter 18pt Semibold", sans-serif;
     font-weight: normal;
     font-size: 16px;
 }
 
 .font-subscript-bold {
-    font-family: "SF Pro Semibold", sans-serif;
+    font-family: "Inter 18pt Semibold", sans-serif;
     font-weight: normal;
     color: #595c5f;
     font-size: 14px;
@@ -97,7 +98,7 @@
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
@@ -117,7 +118,7 @@
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
@@ -137,7 +138,7 @@
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
@@ -157,7 +158,7 @@
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
@@ -177,7 +178,7 @@
     padding: 8px 24px;
     text-align: center;
     display: inline-block;
-    font-family: "SF Pro Regular", sans-serif;
+    font-family: "Inter 18pt Regular", sans-serif;
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
