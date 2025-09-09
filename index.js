@@ -1,4 +1,4 @@
-// Cat Fact & Dog Fact commands
+// Cat Fact & General Fact commands
 async function getCatFact() {
     const Fact = await fetch('https://catfact.ninja/fact')
         .then(res => res.json());
@@ -16,8 +16,8 @@ async function getCatFact() {
     return dialog.setAttribute('open', '');
 };
 
-async function getDogFact() {
-    const Fact = await fetch('https://dogapi.dog/api/v2/facts')
+async function getGeneralFact() {
+    const Fact = await fetch('https://nekos.life/api/v2/fact')
         .then(res => res.json());
 
     const dialog = document.querySelector('md-dialog');
@@ -26,8 +26,8 @@ async function getDogFact() {
     const description = dialog.querySelector('.dialog-description');
     const button = dialog.querySelector('.dialog-button');
 
-        title.innerText = "Dog Fact";
-        description.innerText = Fact.data[0].attributes.body;
+        title.innerText = "General Fact";
+        description.innerText = Fact.fact;
         button.innerText = "Close";
 
     return dialog.setAttribute('open', '');
