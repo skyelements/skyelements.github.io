@@ -20,18 +20,10 @@
     font-size: 16px;
 }
 
-.font-subscript {
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-weight: normal;
-    color: #595c5f;
-    font-size: 14px;
-}
-
 @font-face {
     font-family: 'Inter 18pt Semibold';
     src: url('/src/font/Inter_18pt-SemiBold.ttf');
 }
-
 
 .font-title {
     font-family: "Inter 18pt Semibold", sans-serif;
@@ -39,187 +31,9 @@
     font-size: 32px;
 }
 
-.font-header {
-    font-family: "Inter 18pt Semibold", sans-serif;
-    font-weight: normal;
-    font-size: 24px;
-}
-
-.font-paragraph-bold {
-    font-family: "Inter 18pt Semibold", sans-serif;
-    font-weight: normal;
-    font-size: 20px;
-}
-
-.font-bold {
-    font-family: "Inter 18pt Semibold", sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.font-subscript-bold {
-    font-family: "Inter 18pt Semibold", sans-serif;
-    font-weight: normal;
-    color: #595c5f;
-    font-size: 14px;
-}
-
-/* Page Contents */
-.page-div {
-    position: relative;
-    margin-left: 25px;
-    width: 90%; /* Width cannot be 100% because it exceeds the bootstrap container horizontal length and causes empty space on the right */
-    padding-top: 25px;
-    padding-bottom: 10px;
-}
-
 /* Cards */
-.card {
-    margin-bottom: 20px; /* Adds a spacing between bootstrap cards when display is vertical (such as on Mobile) */
-}
-
 .card-bg {
     background-color: #ebebeb;
-}
-
-.card-bg-light {
-    background-color: #f7f7f7;
-}
-
-/* Buttons */
-.black-button {
-    background-color: #000000;
-    border: none;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f0f6fc1a;
-    color: #ffffff;
-    padding: 8px 24px;
-    text-align: center;
-    display: inline-block;
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: transparent 0px 0px;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.green-button {
-    background-color: #198754;
-    border: none;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f0f6fc1a;
-    color: #ffffff;
-    padding: 8px 24px;
-    text-align: center;
-    display: inline-block;
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: transparent 0px 0px;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.yellow-button {
-    background-color: #ffc107;
-    border: none;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f0f6fc1a;
-    color: #000000;
-    padding: 8px 24px;
-    text-align: center;
-    display: inline-block;
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: transparent 0px 0px;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.red-button {
-    background-color: #dc3545;
-    border: none;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f0f6fc1a;
-    color: #ffffff;
-    padding: 8px 24px;
-    text-align: center;
-    display: inline-block;
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: transparent 0px 0px;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.blue-button {
-    background-color: #0b57d0;
-    border: none;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f0f6fc1a;
-    color: #ffffff;
-    padding: 8px 24px;
-    text-align: center;
-    display: inline-block;
-    font-family: "Inter 18pt Regular", sans-serif;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: transparent 0px 0px;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.black-button:hover {
-    background-color: #333333;
-    color: #ffffff;
-    transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.green-button:hover {
-    background-color: #198754;
-    color: #ffffff;
-    transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.yellow-button:hover {
-    background-color: #ffc107;
-    color: #000000;
-    transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.red-button:hover {
-    background-color: #dc3545;
-    color: #ffffff;
-    transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.blue-button:hover {
-    background-color: #0b57d0;
-    color: #ffffff;
-    transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* Navigation Bar Items */
